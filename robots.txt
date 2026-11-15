@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://juancacereshenriquez-collab.github.io/caceres-motors/sitemap.xml
