@@ -488,6 +488,8 @@ a{color:#B9461F}a:hover{color:#042C53}
     if(location.hash.indexOf('#auto-')===0){
       var s=location.hash.slice(6);
       list.forEach(function(a,i){if(slug(a)===s){openCar(i);}});
+    } else if(location.hash.length>1){
+      var tg=document.getElementById(location.hash.slice(1)); if(tg) tg.scrollIntoView();
     }
   }
 
