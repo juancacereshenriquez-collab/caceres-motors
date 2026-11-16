@@ -7,6 +7,11 @@
       pégalo dentro de la lista AUTOS y cambia los datos.
    3. Guarda. La página se actualiza sola en 1 o 2 minutos.
 
+   CONSIGNACIÓN O VENTA DIRECTA
+   - modalidad: "consignacion"  → aparece en la vitrina de consignación
+                                  y ocupa uno de los 10 cupos
+   - modalidad: "directa"       → auto propio, aparece en "Compra y venta directa"
+
    CÓMO QUITAR O MARCAR UN AUTO
    - Reservado:  estado: "reservado"
    - Vendido:    estado: "vendido"   (deja de ocupar cupo)
@@ -19,8 +24,8 @@
    ===================================================================== */
 
 window.CM_CONFIG = {
-  cupos: 10,                 // cupos totales de la vitrina
-  mostrarCuposVacios: true,  // true = muestra "Tu auto aquí" en los cupos libres
+  cupos: 10,                 // cupos de la vitrina de consignación
+  mostrarCuposVacios: true,  // true = muestra los cupos libres "Tu auto aquí"
   whatsapp: "56945542520"    // número para las consultas (sin + ni espacios)
 };
 
@@ -36,6 +41,7 @@ window.AUTOS = [
     color: "Blanco",
     ubicacion: "Iquique",
     regimen: "",             // "Zona franca", "Liberado", "Nacional" o "" para no mostrar
+    modalidad: "directa",    // "directa" (auto propio) o "consignacion"
     estado: "disponible",    // "disponible", "reservado" o "vendido"
     fotos: [
       "img/cherokee-frontal.jpg",
@@ -65,6 +71,7 @@ window.AUTOS = [
     color: "Gris",
     ubicacion: "Iquique",
     regimen: "Liberado",
+    modalidad: "consignacion",
     estado: "disponible",
     fotos: [
       "autos/yaris-2018-1.jpg",

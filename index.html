@@ -103,6 +103,50 @@ a{color:#B9461F}a:hover{color:#042C53}
 .cm-list{margin:0;padding-left:20px;font-size:14px;color:#33322F;display:flex;flex-direction:column;gap:4px}
 .cm-info .cm-btn{flex:0 0 auto;width:100%}
 </style>
+<style>
+.cm-paths{margin-top:36px;display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:20px}
+.cm-path{background:#FFFFFF;border:1px solid #E4E2DA;border-radius:10px;padding:30px;display:flex;flex-direction:column;gap:12px;border-top:6px solid #B9461F}
+.cm-path-dir{border-top-color:#042C53}
+.cm-path-tag{font-size:12px;font-weight:600;letter-spacing:2.5px;color:#B9461F}
+.cm-path-dir .cm-path-tag{color:#042C53}
+.cm-path h3{margin:0;font-weight:600;font-size:28px;line-height:1.2}
+.cm-path-lead{margin:0;color:#5F5E5A;font-size:16px}
+.cm-path-rows{margin:6px 0 0 0;display:flex;flex-direction:column;border-top:1px solid #E4E2DA}
+.cm-path-rows div{display:grid;grid-template-columns:130px 1fr;gap:12px;padding:11px 0;border-bottom:1px solid #E4E2DA}
+.cm-path-rows dt{font-size:13px;color:#5F5E5A;font-weight:500}
+.cm-path-rows dd{margin:0;font-size:15px;font-weight:600}
+@media (max-width:560px){.cm-path-rows div{grid-template-columns:96px 1fr}.cm-path{padding:22px}}
+.cm-path-btns{display:flex;flex-wrap:wrap;gap:10px;margin-top:auto;padding-top:10px}
+.cm-path-btns .cm-btn{flex:1 1 160px}
+.cm-btn-or{background:#B9461F;border-color:#B9461F;color:#FFFFFF !important}
+.cm-btn-or:hover{background:#9C3A19;border-color:#9C3A19}
+.cm-btn-navy{background:#042C53;border-color:#042C53;color:#FFFFFF !important}
+.cm-btn-navy:hover{background:#031F3B}
+.cm-kicker{display:flex;align-items:center;gap:10px;font-weight:500;font-size:13px;letter-spacing:4px;color:#5F5E5A}
+.cm-kdot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.cm-board{margin-top:24px;display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px}
+@media (max-width:900px){.cm-board{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media (max-width:560px){.cm-board{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cm-tile{position:relative;border:1.5px dashed #C9C7BE;border-radius:8px;min-height:138px;padding:14px;box-sizing:border-box;display:flex;flex-direction:column;justify-content:space-between;gap:8px;background:#FFFFFF;text-decoration:none;color:#042C53 !important;transition:border-color .2s,background .2s}
+a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
+.cm-tile-n{font-size:11px;font-weight:600;letter-spacing:2px;color:#8A8880}
+.cm-tile-plus{width:38px;height:38px;border-radius:50%;background:#F6F5F1;display:flex;align-items:center;justify-content:center}
+.cm-tile b{font-size:15px;font-weight:600;line-height:1.25}
+.cm-tile small{font-size:12px;color:#B9461F;font-weight:600}
+.cm-tile.on{border:0;padding:0;overflow:hidden;cursor:pointer;background:#042C53;font:inherit;text-align:left}
+.cm-tile.on img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.cm-tile.on .cm-tile-cap{position:relative;margin-top:auto;padding:30px 12px 10px;background:linear-gradient(transparent,rgba(3,20,40,.88));color:#FFFFFF;display:flex;flex-direction:column}
+.cm-tile.on .cm-tile-n{position:relative;margin:10px;align-self:flex-start;background:rgba(255,255,255,.92);color:#042C53;padding:3px 8px;border-radius:3px}
+.cm-steps{list-style:none;margin:24px 0 0 0;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.cm-steps li{background:#FFFFFF;border:1px solid #E4E2DA;border-radius:8px;padding:20px;display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start}
+.cm-steps b{font-weight:600;font-size:16px;line-height:1.3;display:block}
+.cm-steps p{margin:4px 0 0 0;color:#5F5E5A;font-size:14px}
+.cm-step-n{width:38px;height:38px;border-radius:50%;background:#042C53;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-weight:600}
+#directa .cm-steps{grid-template-columns:1fr}
+.cm-mod{font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;padding:5px 10px;border-radius:3px;line-height:1.4}
+.cm-mod-consignacion{background:#FBE9E2;color:#9C3A19}
+.cm-mod-directa{background:#E3EAF2;color:#042C53}
+</style>
 </head>
 <body>
 <div style="width: 100%; min-height: 100vh; background: #FFFFFF; color: #042C53; font-family: 'Poppins', sans-serif; font-size: 16px; line-height: 1.6;">
@@ -111,11 +155,11 @@ a{color:#B9461F}a:hover{color:#042C53}
     <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px;">
       <a href="#inicio" style="display: block;"><img src="logo-caceres-motors.png" alt="Cáceres Motors · Compra y venta de vehículos, Iquique" style="height: 56px; width: auto; display: block;"></a>
       <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px; font-weight: 500; font-size: 15px;">
-        <a href="#autos" style="color: #042C53; text-decoration: none; padding: 10px 0;">Vitrina</a>
-        <a href="#incluye" style="color: #042C53; text-decoration: none; padding: 10px 0;">Consignación</a>
-        <a href="#servicios" style="color: #042C53; text-decoration: none; padding: 10px 0;">Servicios</a>
+        <a href="#consignacion" style="color: #042C53; text-decoration: none; padding: 10px 0;">Consignación</a>
+        <a href="#directa" style="color: #042C53; text-decoration: none; padding: 10px 0;">Compra y venta directa</a>
+        <a href="#vendidos" style="color: #042C53; text-decoration: none; padding: 10px 0;">Casos</a>
         <a href="#preguntas" style="color: #042C53; text-decoration: none; padding: 10px 0;">Preguntas</a>
-        <a href="#vender" style="background: #042C53; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 4px; font-weight: 600;">Vende tu auto</a>
+        <a href="#vender" style="background: #042C53; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 4px; font-weight: 600;">Cotiza tu auto</a>
       </nav>
     </div>
   </header>
@@ -128,10 +172,10 @@ a{color:#B9461F}a:hover{color:#042C53}
           COMPRA Y VENTA DE VEHÍCULOS · IQUIQUE
         </div>
         <h1 style="margin: 0; font-weight: 600; font-size: 52px; line-height: 1.1; letter-spacing: -0.5px;">Venta confiable de vehículos, de principio a fin.</h1>
-        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D3D1C7; max-width: 540px;">Compramos, vendemos y consignamos tu auto. Revisamos los papeles, lo publicamos con fotos profesionales y te acompañamos hasta la transferencia.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D3D1C7; max-width: 540px;">Dos formas de vender tu auto: lo dejas en <b style="color:#FFFFFF;font-weight:600;">consignación</b> y lo vendemos por ti, o te lo <b style="color:#FFFFFF;font-weight:600;">compramos directo</b>. Revisamos los papeles y te acompañamos hasta la transferencia.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px;">
-          <a href="#autos" style="background: #B9461F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 15px 26px; border-radius: 4px;">Ver la vitrina</a>
-          <a href="#vender" class="js-consignar" style="border: 1.5px solid rgba(255,255,255,0.65); color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 24px; border-radius: 4px;">Consignar mi auto</a>
+          <a href="#vender" class="js-consignar" style="background: #B9461F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 15px 26px; border-radius: 4px;">Consignar mi auto</a>
+          <a href="#vender" class="js-directa" style="border: 1.5px solid rgba(255,255,255,0.65); color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 24px; border-radius: 4px;">Véndenos tu auto</a>
         </div>
       </div>
       <div style="position: relative;">
@@ -165,29 +209,62 @@ a{color:#B9461F}a:hover{color:#042C53}
     </div>
   </section>
 
-  <section id="autos" style="background: #F6F5F1;">
+  <section id="caminos" style="background: #F6F5F1;">
     <div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
-      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px;">
-        <div>
-          <div style="font-weight: 500; font-size: 13px; letter-spacing: 4px; color: #5F5E5A;">VITRINA CÁCERES MOTORS</div>
-          <h2 style="margin: 8px 0 0 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Autos disponibles</h2>
-          <div class="cm-cupos"><div class="cm-dots" id="cm-dots" aria-hidden="true"></div><span id="cm-cupos-txt" style="font-size: 15px; color: #5F5E5A;"></span></div>
-        </div>
-        <a href="#vender" class="js-consignar" style="background: #B9461F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 13px 22px; border-radius: 4px;">Consignar mi auto</a>
+      <div style="text-align: center; max-width: 720px; margin: 0 auto;">
+        <div style="font-weight: 500; font-size: 13px; letter-spacing: 4px; color: #5F5E5A;">DOS FORMAS DE TRABAJAR CONTIGO</div>
+        <h2 style="margin: 8px 0 0 0; font-weight: 600; font-size: 36px; line-height: 1.2;">¿Consignación o venta directa? Tú eliges.</h2>
       </div>
-      <div id="cm-grid" class="cm-grid">
-        <noscript><p>Para ver la vitrina activa JavaScript, o escríbenos al WhatsApp +56 9 4554 2520.</p></noscript>
+      <div class="cm-paths">
+        <article class="cm-path cm-path-cons">
+          <div class="cm-path-tag">CONSIGNACIÓN</div>
+          <h3>Vendemos tu auto por ti</h3>
+          <p class="cm-path-lead">Tu auto sigue siendo tuyo hasta la venta. Nosotros lo publicamos, atendemos a los interesados y cerramos la venta.</p>
+          <dl class="cm-path-rows">
+            <div><dt>Quién vende</dt><dd>Cáceres Motors, a nombre tuyo</dd></div>
+            <div><dt>Cuánto recibes</dt><dd>Normalmente más: se vende a precio de mercado</dd></div>
+            <div><dt>Plazo</dt><dd>Lo que tarde en aparecer el comprador correcto</dd></div>
+            <div><dt>Ideal si</dt><dd>Quieres sacarle el mejor precio y no tienes apuro</dd></div>
+          </dl>
+          <div class="cm-path-btns">
+            <a href="#consignacion" class="cm-btn cm-btn-or">Ver consignación</a>
+            <a href="#vender" class="cm-btn js-consignar">Consignar mi auto</a>
+          </div>
+        </article>
+        <article class="cm-path cm-path-dir">
+          <div class="cm-path-tag">COMPRA Y VENTA DIRECTA</div>
+          <h3>Te compramos el auto</h3>
+          <p class="cm-path-lead">Te hacemos una oferta por tu auto y, si aceptas, te pagamos sin que tengas que publicarlo. También vendemos autos propios.</p>
+          <dl class="cm-path-rows">
+            <div><dt>Quién compra</dt><dd>Cáceres Motors, directamente</dd></div>
+            <div><dt>Cuánto recibes</dt><dd>Nuestra oferta de compra, clara y sin compromiso</dd></div>
+            <div><dt>Plazo</dt><dd>Rápido: sin publicar ni atender a curiosos</dd></div>
+            <div><dt>Ideal si</dt><dd>Necesitas el dinero pronto o no quieres esperar</dd></div>
+          </dl>
+          <div class="cm-path-btns">
+            <a href="#directa" class="cm-btn cm-btn-navy">Ver venta directa</a>
+            <a href="#vender" class="cm-btn js-directa">Véndenos tu auto</a>
+          </div>
+        </article>
       </div>
     </div>
   </section>
 
-  <section id="incluye">
+  <section id="consignacion">
     <div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px 48px; align-items: end;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px;">
         <div>
-          <div style="font-weight: 500; font-size: 13px; letter-spacing: 4px; color: #5F5E5A;">CONSIGNACIÓN</div>
-          <h2 style="margin: 8px 0 0 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Tú pones el auto. Nosotros hacemos todo lo demás.</h2>
+          <div class="cm-kicker"><span class="cm-kdot" style="background: #B9461F;"></span>CONSIGNACIÓN</div>
+          <h2 style="margin: 8px 0 0 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Vitrina de consignación · 10 cupos</h2>
+          <div class="cm-cupos"><div class="cm-dots" id="cm-dots" aria-hidden="true"></div><span id="cm-cupos-txt" style="font-size: 15px; color: #5F5E5A;"></span></div>
         </div>
+        <a href="#vender" class="js-consignar" style="background: #B9461F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 13px 22px; border-radius: 4px;">Consignar mi auto</a>
+      </div>
+      <div id="grid-cons" class="cm-grid" style="display: none;"></div>
+      <div id="cm-board" class="cm-board"></div>
+
+      <div style="margin-top: 72px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px 48px; align-items: end;">
+        <h3 style="margin: 0; font-weight: 600; font-size: 30px; line-height: 1.2;">Tú pones el auto. Nosotros hacemos todo lo demás.</h3>
         <p style="margin: 0; color: #5F5E5A; font-size: 17px;">Sigues siendo el dueño hasta la venta y el precio final lo decides tú. Te explicamos las condiciones antes de publicar, sin letra chica.</p>
       </div>
       <div class="cm-inc">
@@ -216,6 +293,15 @@ a{color:#B9461F}a:hover{color:#042C53}
           <h3>Venta segura</h3><p>El auto se entrega solo con el pago confirmado y te acompañamos en la transferencia.</p>
         </div>
       </div>
+
+      <h3 style="margin: 64px 0 0 0; font-weight: 600; font-size: 26px; line-height: 1.2;">Cómo funciona la consignación</h3>
+      <ol class="cm-steps">
+        <li><span class="cm-step-n" style="background: #B9461F;">1</span><div><b>Evaluamos tu auto y sus papeles</b><p>Estado, anotaciones vigentes, multas y si es zona franca o liberado.</p></div></li>
+        <li><span class="cm-step-n" style="background: #B9461F;">2</span><div><b>Fijamos el precio con el mercado de Iquique</b><p>Comparamos con autos similares de la zona para venderlo rápido y bien.</p></div></li>
+        <li><span class="cm-step-n" style="background: #B9461F;">3</span><div><b>Fotos HD, video y publicación</b><p>Entra a la vitrina y lo publicamos en Marketplace, Instagram, Yapo y grupos del norte.</p></div></li>
+        <li><span class="cm-step-n" style="background: #B9461F;">4</span><div><b>Venta y transferencia segura</b><p>Coordinamos las visitas y el auto se entrega solo con el pago confirmado.</p></div></li>
+      </ol>
+
       <div class="cm-proof">
         <div style="display: flex; flex-direction: column; gap: 2px;">
           <span style="font-size: 12px; font-weight: 600; letter-spacing: 2px; color: #D3D1C7;">CASO REAL · SUBARU IMPREZA 2007</span>
@@ -226,6 +312,35 @@ a{color:#B9461F}a:hover{color:#042C53}
           <a href="#vendidos" style="border: 1.5px solid rgba(255,255,255,0.6); color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 4px;">Ver el caso</a>
         </div>
       </div>
+    </div>
+  </section>
+
+  <section id="directa" style="background: #EEF2F6;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
+      <div class="cm-kicker"><span class="cm-kdot" style="background: #042C53;"></span>COMPRA Y VENTA DIRECTA</div>
+      <div style="margin-top: 8px; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 32px 56px; align-items: start;">
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <h2 style="margin: 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Te compramos tu auto, sin publicar y sin esperar</h2>
+          <p style="margin: 0; color: #5F5E5A; font-size: 17px;">Cáceres Motors compra el auto directamente. No tienes que sacar fotos, responder mensajes ni mostrarlo a desconocidos.</p>
+          <p style="margin: 0; color: #5F5E5A; font-size: 15px;">¿Quieres cambiar de auto? También recibimos el tuyo en parte de pago (permuta).</p>
+          <a href="#vender" class="js-directa" style="align-self: flex-start; background: #042C53; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 24px; border-radius: 4px; margin-top: 4px;">Pedir una oferta por mi auto</a>
+        </div>
+        <ol class="cm-steps" style="margin-top: 0;">
+          <li><span class="cm-step-n">1</span><div><b>Nos mandas los datos y fotos</b><p>Por WhatsApp o en el formulario de esta página.</p></div></li>
+          <li><span class="cm-step-n">2</span><div><b>Revisamos el auto y sus papeles</b><p>Estado, anotaciones, multas y régimen.</p></div></li>
+          <li><span class="cm-step-n">3</span><div><b>Te hacemos una oferta</b><p>Clara y sin compromiso: tú decides si aceptas.</p></div></li>
+          <li><span class="cm-step-n">4</span><div><b>Pago y transferencia</b><p>Si aceptas, pagamos y firmamos la transferencia en notaría o Registro Civil.</p></div></li>
+        </ol>
+      </div>
+
+      <div style="margin-top: 64px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 32px;">
+        <div>
+          <h3 style="margin: 0; font-weight: 600; font-size: 26px; line-height: 1.2;">Autos propios a la venta</h3>
+          <p style="margin: 6px 0 0 0; color: #5F5E5A; font-size: 15px;">Autos de Cáceres Motors, con papeles al día y precio claro.</p>
+        </div>
+      </div>
+      <div id="grid-dir" class="cm-grid"></div>
+      <p id="dir-empty" style="display: none; margin: 24px 0 0 0; color: #5F5E5A;">Pronto más autos propios. Escríbenos por WhatsApp si buscas algo en particular.</p>
     </div>
   </section>
 
@@ -259,70 +374,12 @@ a{color:#B9461F}a:hover{color:#042C53}
     </div>
   </section>
 
-  <section id="servicios">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box;">
-      <div style="font-weight: 500; font-size: 13px; letter-spacing: 4px; color: #5F5E5A;">SERVICIOS</div>
-      <h2 style="margin: 8px 0 0 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Todo lo que necesitas para cambiar de auto</h2>
-      <div style="margin-top: 36px; display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px;">
-        <div style="border-top: 3px solid #042C53; padding-top: 20px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-weight: 600; font-size: 13px; letter-spacing: 2px; color: #B9461F;">01</div>
-          <h3 style="margin: 0; font-weight: 600; font-size: 21px;">Venta</h3>
-          <p style="margin: 0; color: #5F5E5A; font-size: 15px;">Autos usados revisados, con papeles al día y precio claro desde el primer mensaje.</p>
-        </div>
-        <div style="border-top: 3px solid #042C53; padding-top: 20px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-weight: 600; font-size: 13px; letter-spacing: 2px; color: #B9461F;">02</div>
-          <h3 style="margin: 0; font-weight: 600; font-size: 21px;">Compra</h3>
-          <p style="margin: 0; color: #5F5E5A; font-size: 15px;">Te hacemos una oferta por tu auto y te pagamos sin que tengas que publicarlo.</p>
-        </div>
-        <div style="border-top: 3px solid #D85A30; padding-top: 20px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-weight: 600; font-size: 13px; letter-spacing: 2px; color: #B9461F;">03</div>
-          <h3 style="margin: 0; font-weight: 600; font-size: 21px;">Consignación</h3>
-          <p style="margin: 0; color: #5F5E5A; font-size: 15px;">Nosotros lo publicamos, atendemos a los interesados y cerramos la venta por ti.</p>
-        </div>
-        <div style="border-top: 3px solid #042C53; padding-top: 20px; display: flex; flex-direction: column; gap: 8px;">
-          <div style="font-weight: 600; font-size: 13px; letter-spacing: 2px; color: #B9461F;">04</div>
-          <h3 style="margin: 0; font-weight: 600; font-size: 21px;">Permuta</h3>
-          <p style="margin: 0; color: #5F5E5A; font-size: 15px;">Entrega tu auto como parte de pago y llévate uno que se ajuste mejor a ti.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="consignacion" style="background: #F6F5F1;">
-    <div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start;">
-      <div style="display: flex; flex-direction: column; gap: 16px;">
-        <div style="font-weight: 500; font-size: 13px; letter-spacing: 4px; color: #5F5E5A;">CONSIGNACIÓN</div>
-        <h2 style="margin: 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Vende tu auto sin perder tiempo con curiosos</h2>
-        <p style="margin: 0; color: #5F5E5A; font-size: 17px;">Tú sigues siendo el dueño hasta la venta. Nosotros nos encargamos de que se venda bien y de forma segura.</p>
-        <img src="img/cherokee-puertas.jpg" alt="Jeep Cherokee con las puertas abiertas mostrando el interior" style="width: 100%; height: 260px; object-fit: cover; display: block; border-radius: 6px; margin-top: 8px;">
-      </div>
-      <ol style="margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 14px;">
-        <li style="background: #FFFFFF; border: 1px solid #E4E2DA; border-radius: 6px; padding: 22px; display: grid; grid-template-columns: 48px 1fr; gap: 14px;">
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: #042C53; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</div>
-          <div><h3 style="margin: 0; font-weight: 600; font-size: 18px;">Evaluamos tu auto y sus papeles</h3><p style="margin: 4px 0 0 0; color: #5F5E5A; font-size: 15px;">Revisamos estado, anotaciones vigentes, multas y si es zona franca o liberado.</p></div>
-        </li>
-        <li style="background: #FFFFFF; border: 1px solid #E4E2DA; border-radius: 6px; padding: 22px; display: grid; grid-template-columns: 48px 1fr; gap: 14px;">
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: #042C53; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</div>
-          <div><h3 style="margin: 0; font-weight: 600; font-size: 18px;">Fijamos el precio con el mercado de Iquique</h3><p style="margin: 4px 0 0 0; color: #5F5E5A; font-size: 15px;">Comparamos con autos similares publicados en la zona para venderlo rápido y bien.</p></div>
-        </li>
-        <li style="background: #FFFFFF; border: 1px solid #E4E2DA; border-radius: 6px; padding: 22px; display: grid; grid-template-columns: 48px 1fr; gap: 14px;">
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: #042C53; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</div>
-          <div><h3 style="margin: 0; font-weight: 600; font-size: 18px;">Fotos HD y publicación</h3><p style="margin: 4px 0 0 0; color: #5F5E5A; font-size: 15px;">Lo publicamos en Marketplace, Yapo y grupos de autos del norte, con fotos que venden.</p></div>
-        </li>
-        <li style="background: #FFFFFF; border: 1px solid #E4E2DA; border-radius: 6px; padding: 22px; display: grid; grid-template-columns: 48px 1fr; gap: 14px;">
-          <div style="width: 40px; height: 40px; border-radius: 50%; background: #B9461F; color: #FFFFFF; display: flex; align-items: center; justify-content: center; font-weight: 600;">4</div>
-          <div><h3 style="margin: 0; font-weight: 600; font-size: 18px;">Venta y transferencia segura</h3><p style="margin: 4px 0 0 0; color: #5F5E5A; font-size: 15px;">Coordinamos las visitas y el auto se entrega solo con el pago confirmado y la transferencia hecha.</p></div>
-        </li>
-      </ol>
-    </div>
-  </section>
-
   <section id="vender">
     <div style="max-width: 1200px; margin: 0 auto; padding: 80px 24px; box-sizing: border-box; display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 48px; align-items: start;">
       <div style="display: flex; flex-direction: column; gap: 16px;">
         <div style="font-weight: 500; font-size: 13px; letter-spacing: 4px; color: #5F5E5A;">COTIZA TU AUTO</div>
         <h2 style="margin: 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Cuéntanos de tu auto y te respondemos por WhatsApp</h2>
-        <p style="margin: 0; color: #5F5E5A; font-size: 17px;">Completa los datos y se abre WhatsApp con el mensaje listo para enviar. Te respondemos con una propuesta para venderlo, dejarlo en consignación o permutarlo.</p>
+        <p style="margin: 0; color: #5F5E5A; font-size: 17px;">Completa los datos y se abre WhatsApp con el mensaje listo para enviar. Te respondemos con una propuesta de consignación, de compra directa o de permuta, según lo que elijas.</p>
         <ul style="margin: 8px 0 0 0; padding-left: 20px; color: #33322F; font-size: 15px; display: flex; flex-direction: column; gap: 6px;">
           <li>Sin compromiso: tú decides si sigues.</li>
           <li>Precio basado en autos similares publicados en Iquique.</li>
@@ -335,7 +392,7 @@ a{color:#B9461F}a:hover{color:#042C53}
         <label class="cm-field">Año<input name="anio" type="number" inputmode="numeric" min="1980" max="2027" required placeholder="Ej: 2016"></label>
         <label class="cm-field">Kilometraje<input name="km" type="number" inputmode="numeric" min="0" required placeholder="Ej: 98000"></label>
         <label class="cm-field">Régimen<select name="regimen"><option>Nacional</option><option>Liberado</option><option>Zona franca</option><option>No lo sé</option></select></label>
-        <label class="cm-field">¿Qué quieres hacer?<select name="accion"><option>Venderlo</option><option>Dejarlo en consignación</option><option>Permutarlo por otro</option></select></label>
+        <label class="cm-field">¿Qué quieres hacer?<select name="accion"><option>Dejarlo en consignación</option><option>Vendérselo a Cáceres Motors (compra directa)</option><option>Permutarlo por otro</option></select></label>
         <label class="cm-field">Precio que esperas (opcional)<input name="precio" inputmode="numeric" placeholder="Ej: $6.000.000"></label>
         <label class="cm-field">Tu nombre<input name="nombre" required autocomplete="given-name" placeholder="Ej: Pedro"></label>
         <button type="submit" style="grid-column: 1 / -1; font: inherit; font-weight: 600; font-size: 16px; background: #B9461F; color: #FFFFFF; border: 0; border-radius: 4px; padding: 15px 20px; min-height: 52px; cursor: pointer;">Enviar por WhatsApp</button>
@@ -349,6 +406,7 @@ a{color:#B9461F}a:hover{color:#042C53}
       <div style="font-weight: 500; font-size: 13px; letter-spacing: 4px; color: #5F5E5A;">PREGUNTAS FRECUENTES</div>
       <h2 style="margin: 8px 0 24px 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Lo que todos preguntan antes de vender</h2>
       <div class="cm-faq">
+        <details><summary>¿Qué me conviene: consignación o compra directa?</summary><p>Si no tienes apuro, la consignación normalmente te deja más dinero, porque vendemos tu auto a precio de mercado. Si necesitas el dinero pronto, la compra directa es más rápida: te hacemos una oferta y, si aceptas, pagamos y hacemos la transferencia.</p></details>
         <details><summary>¿Cómo funciona la consignación?</summary><p>Tu auto sigue a tu nombre hasta que se vende. Lo publicamos con fotos HD, atendemos a los interesados, coordinamos las visitas y te contamos cada oferta. El precio final lo decides tú.</p></details>
         <details><summary>¿Qué documentos necesito para vender mi auto?</summary><p>Padrón (certificado de inscripción), revisión técnica, permiso de circulación y SOAP vigentes, y un certificado de anotaciones vigentes sin prendas ni multas impagas. Si te falta algo, te decimos cómo sacarlo.</p></details>
         <details><summary>¿Qué diferencia hay entre un auto zona franca y uno liberado?</summary><p>Un auto de zona franca solo se puede vender a personas con domicilio en la zona franca de extensión (Tarapacá y Arica y Parinacota). Uno liberado ya pagó sus impuestos de importación y se puede vender a cualquier persona en Chile. Te ayudamos a revisar cuál es el tuyo, porque cambia el precio y los compradores posibles.</p></details>
@@ -414,7 +472,7 @@ a{color:#B9461F}a:hover{color:#042C53}
       <div class="cm-thumbs" id="cm-m-thumbs"></div>
     </div>
     <div class="cm-info">
-      <span id="cm-m-badge" class="cm-badge" style="position: static; align-self: flex-start;"></span>
+      <div style="display: flex; flex-wrap: wrap; gap: 8px;"><span id="cm-m-badge" class="cm-badge" style="position: static;"></span><span id="cm-m-mod" class="cm-mod"></span></div>
       <h3 id="cm-m-title" style="margin: 0; font-weight: 600; font-size: 26px; line-height: 1.2;"></h3>
       <div id="cm-m-price" class="cm-price" style="font-size: 30px;"></div>
       <div id="cm-m-specs" class="cm-specs"></div>
@@ -440,54 +498,67 @@ a{color:#B9461F}a:hover{color:#042C53}
   function pageUrl(a){return location.origin+location.pathname+'#auto-'+slug(a);}
   function waLink(a){return 'https://wa.me/'+CFG.whatsapp+'?text='+encodeURIComponent('Hola Cáceres Motors, me interesa el '+name(a)+' que vi en su web: '+pageUrl(a));}
 
+  function modOf(a){var m=String(a.modalidad||'consignacion').toLowerCase();return m.indexOf('direct')>=0||m.indexOf('propio')>=0?'directa':'consignacion';}
+  var MOD={consignacion:'En consignación',directa:'Venta directa'};
+  function card(a,i){
+    return '<article class="cm-car'+(a.estado==='vendido'?' is-vendido':'')+'" id="auto-'+slug(a)+'">'+
+      '<button type="button" class="cm-media" data-i="'+i+'" aria-label="Ver fotos de '+esc(name(a))+'">'+
+      '<img src="'+esc(a.fotos[0])+'" alt="'+esc(name(a))+'" loading="lazy">'+
+      '<span class="cm-badge cm-b-'+esc(a.estado)+'">'+esc(LBL[a.estado]||a.estado)+'</span>'+
+      (a.fotos.length>1?'<span class="cm-count">'+CAM+a.fotos.length+' fotos</span>':'')+'</button>'+
+      '<div class="cm-body"><div class="cm-meta">'+esc(meta(a))+'</div>'+
+      '<h3 class="cm-title">'+esc(a.marca+' '+a.modelo)+'</h3>'+
+      '<div class="cm-price">'+esc(money(a.precio))+'</div>'+
+      '<div class="cm-actions"><button type="button" class="cm-btn" data-i="'+i+'">Ver fotos</button>'+
+      (a.estado==='vendido'?'':'<a class="cm-btn cm-btn-wa" href="'+esc(waLink(a))+'" target="_blank" rel="noopener">'+WA+'Consultar</a>')+
+      '</div></div></article>';
+  }
   function render(){
     if(window.CM_CONFIG){for(var k in window.CM_CONFIG){CFG[k]=window.CM_CONFIG[k];}}
     var autos=(window.AUTOS||[]).filter(function(a){return a&&a.marca;});
-    autos.forEach(function(a){a.estado=(a.estado||'disponible').toLowerCase();if(!a.fotos||!a.fotos.length)a.fotos=['img/og-caceres-motors.jpg'];});
-    var activos=autos.filter(function(a){return a.estado!=='vendido';});
-    var vendidos=autos.filter(function(a){return a.estado==='vendido';});
-    list=activos.concat(vendidos);
-    var grid=document.getElementById('cm-grid'); if(!grid) return;
-    var libres=Math.max(0,CFG.cupos-activos.length);
-    var h='';
-    list.forEach(function(a,i){
-      h+='<article class="cm-car'+(a.estado==='vendido'?' is-vendido':'')+'" id="auto-'+slug(a)+'">'+
-        '<button type="button" class="cm-media" data-i="'+i+'" aria-label="Ver fotos de '+esc(name(a))+'">'+
-        '<img src="'+esc(a.fotos[0])+'" alt="'+esc(name(a))+'" loading="lazy">'+
-        '<span class="cm-badge cm-b-'+esc(a.estado)+'">'+esc(LBL[a.estado]||a.estado)+'</span>'+
-        (a.fotos.length>1?'<span class="cm-count">'+CAM+a.fotos.length+' fotos</span>':'')+'</button>'+
-        '<div class="cm-body"><div class="cm-meta">'+esc(meta(a))+'</div>'+
-        '<h3 class="cm-title">'+esc(a.marca+' '+a.modelo)+'</h3>'+
-        '<div class="cm-price">'+esc(money(a.precio))+'</div>'+
-        '<div class="cm-actions"><button type="button" class="cm-btn" data-i="'+i+'">Ver fotos</button>'+
-        (a.estado==='vendido'?'':'<a class="cm-btn cm-btn-wa" href="'+esc(waLink(a))+'" target="_blank" rel="noopener">'+WA+'Consultar</a>')+
-        '</div></div></article>';
-    });
-    if(CFG.mostrarCuposVacios){
-      for(var j=0;j<libres;j++){
-        var n=activos.length+j+1;
-        h+='<a class="cm-slot js-consignar" href="#vender"><span class="cm-slot-num">CUPO '+(n<10?'0':'')+n+' DE '+CFG.cupos+'</span>'+
-          '<span class="cm-slot-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B9461F" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span>'+
-          '<strong>Tu auto aquí</strong>'+(j===0?'<p>Déjalo en consignación: fotos HD, video para redes y publicación en todo el norte.</p>':'')+
-          '<span class="cm-slot-cta">Consignar mi auto →</span></a>';
+    autos.forEach(function(a){a.estado=(a.estado||'disponible').toLowerCase();a._mod=modOf(a);if(!a.fotos||!a.fotos.length)a.fotos=['img/og-caceres-motors.jpg'];});
+    var act=function(m){return autos.filter(function(a){return a._mod===m&&a.estado!=='vendido';});};
+    var ven=function(m){return autos.filter(function(a){return a._mod===m&&a.estado==='vendido';});};
+    var cons=act('consignacion').concat(ven('consignacion'));
+    var dir=act('directa').concat(ven('directa'));
+    list=cons.concat(dir);
+    var consAct=act('consignacion');
+    // vitrina consignación
+    var gc=document.getElementById('grid-cons');
+    if(gc){gc.innerHTML=cons.map(function(a,i){return card(a,i);}).join('');gc.style.display=cons.length?'':'none';}
+    var libres=Math.max(0,CFG.cupos-consAct.length);
+    var bd=document.getElementById('cm-board');
+    if(bd){
+      var h='';
+      for(var n=1;n<=CFG.cupos;n++){
+        var a=consAct[n-1], lab='CUPO '+(n<10?'0':'')+n;
+        if(a){
+          h+='<button type="button" class="cm-tile on" data-i="'+list.indexOf(a)+'" aria-label="Ver '+esc(name(a))+'"><img src="'+esc(a.fotos[0])+'" alt="" loading="lazy"><span class="cm-tile-n">'+lab+'</span><span class="cm-tile-cap"><b>'+esc(a.marca+' '+a.modelo)+'</b><span style="font-size:12px;opacity:.85;">'+esc(money(a.precio))+'</span></span></button>';
+        } else {
+          h+='<a class="cm-tile js-consignar" href="#vender"><span class="cm-tile-n">'+lab+'</span><span class="cm-tile-plus"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#B9461F" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg></span><span><b>Tu auto aquí</b><br><small>Cupo libre →</small></span></a>';
+        }
       }
+      bd.innerHTML=h; bd.style.display=CFG.mostrarCuposVacios||consAct.length?'':'none';
     }
-    grid.innerHTML=h;
-    var dots='';for(var d=0;d<CFG.cupos;d++){dots+='<i class="'+(d<activos.length?'on':'')+'"></i>';}
+    var dots='';for(var d=0;d<CFG.cupos;d++){dots+='<i class="'+(d<consAct.length?'on':'')+'"></i>';}
     var dz=document.getElementById('cm-dots'); if(dz) dz.innerHTML=dots;
     var t=document.getElementById('cm-cupos-txt');
-    if(t) t.textContent=activos.length+' de '+CFG.cupos+' cupos ocupados · '+(libres===1?'queda 1 cupo':'quedan '+libres+' cupos')+' para consignar';
-    grid.querySelectorAll('[data-i]').forEach(function(b){b.addEventListener('click',function(){openCar(+b.dataset.i);});});
-    // portada: primer auto activo
-    var hero=activos[0];
+    if(t) t.textContent=consAct.length+' de '+CFG.cupos+' cupos ocupados · '+(libres===1?'queda 1 cupo libre':'quedan '+libres+' cupos libres');
+    // vitrina venta directa
+    var gd=document.getElementById('grid-dir');
+    if(gd){gd.innerHTML=dir.map(function(a,i){return card(a,cons.length+i);}).join('');}
+    var de=document.getElementById('dir-empty'); if(de) de.style.display=dir.length?'none':'';
+    document.querySelectorAll('#grid-cons [data-i],#grid-dir [data-i],#cm-board [data-i]').forEach(function(b){b.addEventListener('click',function(){openCar(+b.dataset.i);});});
+    // portada: primer auto disponible
+    var hero=autos.filter(function(a){return a.estado!=='vendido';})[0];
     if(hero){
       var hi=document.getElementById('hero-img'),hn=document.getElementById('hero-name'),ht=document.getElementById('hero-tag');
-      if(hi){hi.src=hero.fotos[0];hi.alt=name(hero);} if(hn) hn.textContent=name(hero); if(ht) ht.textContent=(LBL[hero.estado]||'').toUpperCase();
+      if(hi){hi.src=hero.fotos[0];hi.alt=name(hero);} if(hn) hn.textContent=name(hero); if(ht) ht.textContent=(LBL[hero.estado]+' · '+MOD[hero._mod]).toUpperCase();
     }
-    bindConsignar();
+    bindButtons();
     if(location.hash.indexOf('#auto-')===0){
-      var s=location.hash.slice(6);
-      list.forEach(function(a,i){if(slug(a)===s){openCar(i);}});
+      var sl=location.hash.slice(6);
+      list.forEach(function(a,i){if(slug(a)===sl){openCar(i);}});
     } else if(location.hash.length>1){
       var tg=document.getElementById(location.hash.slice(1)); if(tg) tg.scrollIntoView();
     }
@@ -498,7 +569,7 @@ a{color:#B9461F}a:hover{color:#042C53}
   function show(k){
     var a=list[cur]; fi=(k+a.fotos.length)%a.fotos.length;
     var img=document.getElementById('cm-m-img'); img.src=a.fotos[fi]; img.alt=name(a)+', foto '+(fi+1);
-    document.getElementById('cm-m-ctr').textContent=(fi+1)+' / '+a.fotos.length;
+    var ctr=document.getElementById('cm-m-ctr'); ctr.textContent=(fi+1)+' / '+a.fotos.length; ctr.style.display=a.fotos.length>1?'':'none';
     document.querySelectorAll('#cm-m-thumbs button').forEach(function(b,i){b.classList.toggle('on',i===fi);});
     var many=a.fotos.length>1;
     document.getElementById('cm-m-prev').style.display=many?'':'none';
@@ -506,7 +577,7 @@ a{color:#B9461F}a:hover{color:#042C53}
   }
   function openCar(i){
     cur=i; var a=list[i];
-    var b=document.getElementById('cm-m-badge'); b.className='cm-badge cm-b-'+a.estado; b.textContent=LBL[a.estado]||a.estado;
+    var b=document.getElementById('cm-m-badge'); b.className='cm-badge cm-b-'+a.estado; b.textContent=LBL[a.estado]||a.estado; var md=document.getElementById('cm-m-mod'); md.className='cm-mod cm-mod-'+a._mod; md.textContent=MOD[a._mod];
     document.getElementById('cm-m-title').textContent=name(a);
     document.getElementById('cm-m-price').textContent=money(a.precio);
     var sp=[['Año',a.anio],['Kilometraje',a.km!=null&&a.km!==''?num(a.km)+' km':''],['Motor',a.motor],['Color',a.color],['Ubicación',a.ubicacion],['Régimen',a.regimen]];
@@ -523,7 +594,7 @@ a{color:#B9461F}a:hover{color:#042C53}
   }
   function closeCar(){ if(M.close) M.close(); else M.removeAttribute('open'); }
   if(M){
-    M.addEventListener('close',function(){ if(history.replaceState) history.replaceState(null,'','#autos'); });
+    M.addEventListener('close',function(){ if(history.replaceState) history.replaceState(null,'',location.pathname+location.search); });
     document.getElementById('cm-m-close').addEventListener('click',closeCar);
     document.getElementById('cm-m-prev').addEventListener('click',function(){show(fi-1);});
     document.getElementById('cm-m-next').addEventListener('click',function(){show(fi+1);});
@@ -534,13 +605,16 @@ a{color:#B9461F}a:hover{color:#042C53}
     g.addEventListener('touchend',function(e){ if(x0===null) return; var dx=e.changedTouches[0].clientX-x0; if(Math.abs(dx)>40) show(fi+(dx<0?1:-1)); x0=null; });
   }
 
-  // botones "consignar": dejan elegida la opción en el formulario
-  function bindConsignar(){
-    document.querySelectorAll('.js-consignar').forEach(function(el){
-      if(el._cm) return; el._cm=1;
-      el.addEventListener('click',function(){ var s=document.querySelector('#form-cotiza select[name="accion"]'); if(s) s.value='Dejarlo en consignación'; });
+  // botones: dejan elegida la opción en el formulario
+  function bindButtons(){
+    [['.js-consignar','Dejarlo en consignación'],['.js-directa','Vendérselo a Cáceres Motors (compra directa)']].forEach(function(p){
+      document.querySelectorAll(p[0]).forEach(function(el){
+        if(el._cm) return; el._cm=1;
+        el.addEventListener('click',function(){ var sel=document.querySelector('#form-cotiza select[name="accion"]'); if(sel) sel.value=p[1]; });
+      });
     });
   }
+  bindButtons();
 
   var s=document.createElement('script'); s.src='autos.js?t='+Date.now(); s.onload=render; s.onerror=render; document.head.appendChild(s);
 })();
