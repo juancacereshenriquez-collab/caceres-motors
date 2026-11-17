@@ -32,6 +32,39 @@ window.CM_CONFIG = {
 window.AUTOS = [
 
   {
+    marca: "Mazda",
+    modelo: "3 Axela",
+    anio: 2017,
+    precio: 5500000,
+    km: 90000,
+    motor: "Skyactiv bencinero automático",
+    color: "Gris",
+    ubicacion: "Iquique",
+    regimen: "Zona franca",
+    modalidad: "directa",
+    estado: "disponible",
+    fotos: [
+      "autos/mazda3-axela-2017-1.jpg",
+      "autos/mazda3-axela-2017-2.jpg",
+      "autos/mazda3-axela-2017-3.jpg",
+      "autos/mazda3-axela-2017-4.jpg",
+      "autos/mazda3-axela-2017-5.jpg",
+      "autos/mazda3-axela-2017-6.jpg",
+      "autos/mazda3-axela-2017-7.jpg",
+      "autos/mazda3-axela-2017-8.jpg",
+      "autos/mazda3-axela-2017-9.jpg"
+    ],
+    detalles: [
+      "Hatchback 5 puertas",
+      "Motor Skyactiv: rendimiento y bajo consumo",
+      "Pantalla multimedia con perilla de mando",
+      "Volante multifunción",
+      "Llantas de aleación, alerón y antena tipo aleta",
+      "Se vende con factura · pago por transferencia o efectivo"
+    ]
+  },
+
+  {
     marca: "Jeep",
     modelo: "Cherokee Limited",
     anio: 2015,
@@ -42,7 +75,7 @@ window.AUTOS = [
     ubicacion: "Iquique",
     regimen: "",             // "Zona franca", "Liberado", "Nacional" o "" para no mostrar
     modalidad: "directa",    // "directa" (auto propio) o "consignacion"
-    estado: "disponible",    // "disponible", "reservado" o "vendido"
+    estado: "vendido",       // "disponible", "reservado" o "vendido"
     fotos: [
       "img/cherokee-frontal.jpg",
       "img/cherokee-lateral.jpg",
