@@ -37,7 +37,7 @@ window.AUTOS = [
     anio: 2017,
     precio: 5500000,
     km: 90000,
-    motor: "Skyactiv bencinero automático",
+    motor: "Skyactiv-G bencinero automático",
     color: "Gris",
     ubicacion: "Iquique",
     regimen: "Zona franca",
@@ -56,7 +56,8 @@ window.AUTOS = [
     ],
     detalles: [
       "Hatchback 5 puertas",
-      "Motor Skyactiv: rendimiento y bajo consumo",
+      "Tecnología SKYACTIV-G (bencina): relación de compresión de 14:1, muy alta para un motor bencinero, que aprovecha mejor el combustible y reduce las emisiones",
+      "Rendimiento aproximado de 14 km por litro",
       "Pantalla multimedia con perilla de mando",
       "Volante multifunción",
       "Llantas de aleación, alerón y antena tipo aleta",
