@@ -93,6 +93,28 @@ window.AUTOS = [
     ]
   },
 
+  {
+    marca: "Subaru",
+    modelo: "Impreza",
+    anio: 2007,
+    precio: 2400000,
+    km: 177394,
+    motor: "Eco Turbo",
+    color: "Negro",
+    ubicacion: "Iquique",
+    regimen: "",
+    modalidad: "directa",
+    estado: "vendido",
+    fotos: [
+      "autos/subaru-impreza-2007-1.jpg"
+    ],
+    detalles: [
+      "Hatchback",
+      "Revisión técnica y permiso de circulación al día",
+      "Vendido en $2.400.000, un 20% sobre lo que pidió su dueña"
+    ]
+  },
+
   /* ---------- MODELO PARA COPIAR (está desactivado) ----------
   {
     marca: "Toyota",
