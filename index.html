@@ -147,18 +147,32 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
 .cm-mod-consignacion{background:#FBE9E2;color:#9C3A19}
 .cm-mod-directa{background:#E3EAF2;color:#042C53}
 </style>
+<style>
+.cm-header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.96);-webkit-backdrop-filter:saturate(1.4) blur(8px);backdrop-filter:saturate(1.4) blur(8px);box-shadow:0 1px 0 #E4E2DA}
+.cm-nav-link:hover{color:#B9461F !important}
+@media (max-width:760px){.cm-nav-link{display:none}}
+.cm-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px 20px;margin-top:10px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16)}
+@media (max-width:640px){.cm-stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.cm-stat b{display:block;font-size:28px;font-weight:700;color:#FFFFFF;line-height:1.1}
+.cm-stat span{display:block;font-size:12.5px;color:#D3D1C7;line-height:1.35;margin-top:4px}
+.cm-hero-card{position:absolute;left:16px;bottom:16px;right:16px;max-width:360px;background:#FFFFFF;color:#042C53;border-radius:6px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:14px;box-shadow:0 10px 26px rgba(4,44,83,.3)}
+.cm-hero-open{border:0;background:#B9461F;color:#FFFFFF;font:600 14px Poppins,sans-serif;padding:11px 14px;border-radius:4px;cursor:pointer;white-space:nowrap}
+.cm-hero-open:hover{background:#9C3A19}
+#hero-img{cursor:pointer}
+</style>
 </head>
 <body>
 <div style="width: 100%; min-height: 100vh; background: #FFFFFF; color: #042C53; font-family: 'Poppins', sans-serif; font-size: 16px; line-height: 1.6;">
 
-  <header style="background: #FFFFFF; border-bottom: 1px solid #E4E2DA;">
+  <header class="cm-header">
     <div style="max-width: 1200px; margin: 0 auto; padding: 14px 24px; box-sizing: border-box; display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px 32px;">
       <a href="#inicio" style="display: block;"><img src="logo-caceres-motors.png" alt="Cáceres Motors · Compra y venta de vehículos, Iquique" style="height: 56px; width: auto; display: block;"></a>
       <nav aria-label="Principal" style="display: flex; flex-wrap: wrap; align-items: center; gap: 6px 26px; font-weight: 500; font-size: 15px;">
-        <a href="#consignacion" style="color: #042C53; text-decoration: none; padding: 10px 0;">Consignación</a>
-        <a href="#directa" style="color: #042C53; text-decoration: none; padding: 10px 0;">Compra y venta directa</a>
-        <a href="#vendidos" style="color: #042C53; text-decoration: none; padding: 10px 0;">Casos</a>
-        <a href="#preguntas" style="color: #042C53; text-decoration: none; padding: 10px 0;">Preguntas</a>
+        <a class="cm-nav-link" href="#autos" style="color: #042C53; text-decoration: none; padding: 10px 0;">Autos en venta</a>
+        <a class="cm-nav-link" href="#consignacion" style="color: #042C53; text-decoration: none; padding: 10px 0;">Consignación</a>
+        <a class="cm-nav-link" href="#directa" style="color: #042C53; text-decoration: none; padding: 10px 0;">Te compramos tu auto</a>
+        <a class="cm-nav-link" href="#vendidos" style="color: #042C53; text-decoration: none; padding: 10px 0;">Vendidos</a>
+        <a class="cm-nav-link" href="#preguntas" style="color: #042C53; text-decoration: none; padding: 10px 0;">Preguntas</a>
         <a href="#vender" style="background: #042C53; color: #FFFFFF; text-decoration: none; padding: 12px 20px; border-radius: 4px; font-weight: 600;">Cotiza tu auto</a>
       </nav>
     </div>
@@ -172,17 +186,27 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
           COMPRA Y VENTA DE VEHÍCULOS · IQUIQUE
         </div>
         <h1 style="margin: 0; font-weight: 600; font-size: 52px; line-height: 1.1; letter-spacing: -0.5px;">Venta confiable de vehículos, de principio a fin.</h1>
-        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D3D1C7; max-width: 540px;">Dos formas de vender tu auto: lo dejas en <b style="color:#FFFFFF;font-weight:600;">consignación</b> y lo vendemos por ti, o te lo <b style="color:#FFFFFF;font-weight:600;">compramos directo</b>. Revisamos los papeles y te acompañamos hasta la transferencia.</p>
+        <p style="margin: 0; font-size: 18px; line-height: 1.6; color: #D3D1C7; max-width: 560px;">Autos revisados a la venta en Iquique y dos formas de vender el tuyo: lo dejas en <b style="color:#FFFFFF;font-weight:600;">consignación</b> y lo vendemos por ti, o te lo <b style="color:#FFFFFF;font-weight:600;">compramos directo</b>. Papeles revisados y pago verificado hasta la transferencia.</p>
         <div style="display: flex; flex-wrap: wrap; gap: 14px; margin-top: 6px;">
-          <a href="#vender" class="js-consignar" style="background: #B9461F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 15px 26px; border-radius: 4px;">Consignar mi auto</a>
-          <a href="#vender" class="js-directa" style="border: 1.5px solid rgba(255,255,255,0.65); color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 24px; border-radius: 4px;">Véndenos tu auto</a>
+          <a href="#autos" style="background: #B9461F; color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 15px 26px; border-radius: 4px;">Ver autos en venta</a>
+          <a href="#caminos" style="border: 1.5px solid rgba(255,255,255,0.65); color: #FFFFFF; text-decoration: none; font-weight: 600; padding: 14px 24px; border-radius: 4px;">Vender o consignar mi auto</a>
+        </div>
+        <div class="cm-stats" aria-label="Cáceres Motors en cifras">
+          <div class="cm-stat"><b id="st-venta">1</b><span>auto en venta ahora</span></div>
+          <div class="cm-stat"><b id="st-vend">2</b><span>autos vendidos</span></div>
+          <div class="cm-stat"><b>+20%</b><span>sobre lo pedido por su dueña (caso Subaru)</span></div>
+          <div class="cm-stat"><b id="st-cupos">10</b><span>cupos de consignación disponibles</span></div>
         </div>
       </div>
       <div style="position: relative;">
         <img id="hero-img" src="autos/mazda3-axela-2017-1.jpg" alt="Mazda 3 Axela 2017 gris, vista frontal tres cuartos" style="width: 100%; height: 440px; object-fit: cover; object-position: 50% 50%; display: block; border-radius: 6px;">
-        <div style="position: absolute; left: 16px; bottom: 16px; background: #FFFFFF; color: #042C53; border-radius: 4px; padding: 12px 16px; display: flex; flex-direction: column; gap: 2px; box-shadow: 0 6px 18px rgba(4,44,83,0.25);">
-          <span id="hero-tag" style="font-size: 12px; font-weight: 600; letter-spacing: 2px; color: #5F5E5A;">DISPONIBLE</span>
-          <span id="hero-name" style="font-weight: 600; font-size: 16px;">Mazda 3 Axela 2017</span>
+        <div class="cm-hero-card">
+          <div style="display: flex; flex-direction: column; gap: 1px; min-width: 0;">
+            <span id="hero-tag" style="font-size: 11px; font-weight: 600; letter-spacing: 2px; color: #1E6B3A;">DISPONIBLE · VENTA DIRECTA</span>
+            <span id="hero-name" style="font-weight: 600; font-size: 16px;">Mazda 3 Axela 2017</span>
+            <span id="hero-price" style="font-weight: 700; font-size: 20px; color: #B9461F; line-height: 1.2;">$5.500.000</span>
+          </div>
+          <button type="button" class="cm-hero-open" id="hero-open">Ver ficha</button>
         </div>
       </div>
     </div>
@@ -206,6 +230,21 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
         <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="#B9461F" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"></path><circle cx="12" cy="9.5" r="2.5"></circle></svg>
         <div><div style="font-weight: 600; font-size: 16px;">Iquique y Arica</div><div style="font-size: 14px; color: #5F5E5A;">Atención presencial y con cita en el norte grande.</div></div>
       </div>
+    </div>
+  </section>
+
+  <section id="autos" style="background: #EEF2F6;">
+    <div style="max-width: 1200px; margin: 0 auto; padding: 72px 24px 80px; box-sizing: border-box;">
+      <div style="display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 16px 32px;">
+        <div>
+          <div class="cm-kicker"><span class="cm-kdot" style="background: #B9461F;"></span>VITRINA</div>
+          <h2 style="margin: 8px 0 0 0; font-weight: 600; font-size: 36px; line-height: 1.2;">Autos propios a la venta</h2>
+          <p style="margin: 8px 0 0 0; color: #5F5E5A; font-size: 16px; max-width: 620px;">Autos de Cáceres Motors con papeles revisados, fotos reales y precio claro. Escríbenos y coordinamos una visita en Iquique.</p>
+        </div>
+        <a href="https://wa.me/56945542520?text=Hola%20C%C3%A1ceres%20Motors%2C%20busco%20un%20auto" target="_blank" rel="noopener" style="border: 1.5px solid #042C53; color: #042C53; text-decoration: none; font-weight: 600; padding: 12px 20px; border-radius: 4px;">¿Buscas otro auto? Escríbenos</a>
+      </div>
+      <div id="grid-dir" class="cm-grid"></div>
+      <p id="dir-empty" style="display: none; margin: 24px 0 0 0; color: #5F5E5A;">Pronto más autos propios. Escríbenos por WhatsApp si buscas algo en particular.</p>
     </div>
   </section>
 
@@ -333,14 +372,6 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
         </ol>
       </div>
 
-      <div style="margin-top: 64px; display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 12px 32px;">
-        <div>
-          <h3 style="margin: 0; font-weight: 600; font-size: 26px; line-height: 1.2;">Autos propios a la venta</h3>
-          <p style="margin: 6px 0 0 0; color: #5F5E5A; font-size: 15px;">Autos de Cáceres Motors, con papeles al día y precio claro.</p>
-        </div>
-      </div>
-      <div id="grid-dir" class="cm-grid"></div>
-      <p id="dir-empty" style="display: none; margin: 24px 0 0 0; color: #5F5E5A;">Pronto más autos propios. Escríbenos por WhatsApp si buscas algo en particular.</p>
     </div>
   </section>
 
@@ -363,6 +394,22 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
               <div><div style="font-size: 13px; color: #5F5E5A;">Vendido en</div><div style="font-weight: 700; font-size: 18px; color: #B9461F;">$2.400.000</div></div>
             </div>
             <p style="margin: 0; font-size: 15px; color: #33322F;">Su dueña nos dejó el auto en consignación y lo vendimos <strong>un 20% sobre el precio que había pedido</strong>, con papeles revisados y pago verificado antes de entregar.</p>
+          </div>
+        </article>
+        <article style="border: 1px solid #E4E2DA; border-radius: 6px; overflow: hidden; display: flex; flex-direction: column;">
+          <div style="background: #042C53; color: #FFFFFF; padding: 14px 22px; display: flex; justify-content: space-between; align-items: center; gap: 12px;">
+            <span style="font-weight: 600; font-size: 13px; letter-spacing: 2px;">VENDIDO · VENTA DIRECTA</span>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+          </div>
+          <img src="img/cherokee-frontal.jpg" alt="Jeep Cherokee Limited 2015 blanca vendida por Cáceres Motors" loading="lazy" style="width: 100%; height: 260px; object-fit: cover; object-position: 50% 60%; display: block;">
+          <div style="padding: 22px; display: flex; flex-direction: column; gap: 12px;">
+            <h3 style="margin: 0; font-weight: 600; font-size: 22px;">Jeep Cherokee Limited 2015</h3>
+            <div style="font-size: 14px; color: #5F5E5A;">SUV · Blanco · 98.000 km</div>
+            <div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; border-top: 1px solid #E4E2DA; padding-top: 14px;">
+              <div><div style="font-size: 13px; color: #5F5E5A;">Modalidad</div><div style="font-weight: 600; font-size: 18px;">Venta directa</div></div>
+              <div><div style="font-size: 13px; color: #5F5E5A;">Vendida en</div><div style="font-weight: 700; font-size: 18px; color: #B9461F;">Noviembre 2026</div></div>
+            </div>
+            <p style="margin: 0; font-size: 15px; color: #33322F;">La publicamos con fotos HD en la web y en Marketplace, y se vendió con <strong>papeles revisados y pago verificado</strong> antes de entregar.</p>
           </div>
         </article>
         <div style="border: 1px dashed #C9C7BE; border-radius: 6px; padding: 26px; display: flex; flex-direction: column; justify-content: center; gap: 12px; background: #FFFFFF;">
@@ -436,6 +483,7 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
       <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px;">
         <div style="font-weight: 500; font-size: 12px; letter-spacing: 3px; color: #B4B2A9;">CONTACTO</div>
         <a href="https://wa.me/56945542520" style="color: #FFFFFF; text-decoration: none; padding: 4px 0;">WhatsApp +56 9 4554 2520</a>
+        <a href="https://www.instagram.com/caceres_motors_co/" target="_blank" rel="noopener" style="color: #FFFFFF; text-decoration: none; padding: 4px 0;">Instagram @caceres_motors_co</a>
       </div>
       <div style="display: flex; flex-direction: column; gap: 6px; font-size: 15px;">
         <div style="font-weight: 500; font-size: 12px; letter-spacing: 3px; color: #B4B2A9;">ATENCIÓN</div>
@@ -543,7 +591,12 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
     var dots='';for(var d=0;d<CFG.cupos;d++){dots+='<i class="'+(d<consAct.length?'on':'')+'"></i>';}
     var dz=document.getElementById('cm-dots'); if(dz) dz.innerHTML=dots;
     var t=document.getElementById('cm-cupos-txt');
-    if(t) t.textContent=consAct.length+' de '+CFG.cupos+' cupos ocupados · '+(libres===1?'queda 1 cupo libre':'quedan '+libres+' cupos libres');
+    if(t) t.textContent=consAct.length?consAct.length+' de '+CFG.cupos+' cupos ocupados · '+(libres===1?'queda 1 cupo libre':'quedan '+libres+' cupos libres'):'Los '+CFG.cupos+' cupos están disponibles · reserva el tuyo';
+    var sv=document.getElementById('st-venta'),sd=document.getElementById('st-vend'),sc=document.getElementById('st-cupos');
+    var nVenta=autos.filter(function(a){return a.estado!=='vendido';}).length, nVend=autos.filter(function(a){return a.estado==='vendido';}).length;
+    if(sv){sv.textContent=nVenta; sv.nextElementSibling.textContent=nVenta===1?'auto en venta ahora':'autos en venta ahora';}
+    if(sd){sd.textContent=nVend; sd.nextElementSibling.textContent=nVend===1?'auto vendido':'autos vendidos';}
+    if(sc){sc.textContent=libres;}
     // vitrina venta directa
     var gd=document.getElementById('grid-dir');
     if(gd){gd.innerHTML=dir.map(function(a,i){return card(a,cons.length+i);}).join('');}
@@ -554,6 +607,8 @@ a.cm-tile:hover{border-color:#B9461F;background:#FFF8F4}
     if(hero){
       var hi=document.getElementById('hero-img'),hn=document.getElementById('hero-name'),ht=document.getElementById('hero-tag');
       if(hi){hi.src=hero.fotos[0];hi.alt=name(hero);} if(hn) hn.textContent=name(hero); if(ht) ht.textContent=(LBL[hero.estado]+' · '+MOD[hero._mod]).toUpperCase();
+      var hp=document.getElementById('hero-price'); if(hp) hp.textContent=money(hero.precio);
+      var hk=list.indexOf(hero); ['hero-open','hero-img'].forEach(function(id){var el=document.getElementById(id); if(el&&!el._cmh){el._cmh=1; el.addEventListener('click',function(){openCar(hk);});}});
     }
     bindButtons();
     if(location.hash.indexOf('#auto-')===0){
